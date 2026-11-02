@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontre serviços públicos de acordo com seu estado e município.">
+    <title>Serviços Públicos | Cidadania Sem Fronteiras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a class="pular-conteudo" href="#conteudo"
+   data-pt="Pular para o conteúdo"
+   data-en="Skip to content"
+   data-es="Saltar al contenido">
+    Pular para o conteúdo
+</a>
+
+<header class="cabecalho">
+
+    <div class="logo">Cidadania Sem Fronteiras</div>
+
+    <nav class="menu" aria-label="Menu principal">
+
+        <a href="index.html"
+           data-pt="Início" data-en="Home" data-es="Inicio">
+            Início
+        </a>
+
+        <a href="servicos.html"
+           data-pt="Serviços" data-en="Services" data-es="Servicios">
+            Serviços
+        </a>
+
+        <a href="index.html#acessibilidade"
+           data-pt="Acessibilidade" data-en="Accessibility" data-es="Accesibilidad">
+            Acessibilidade
+        </a>
+
+        <a href="index.html#sobre"
+           data-pt="Sobre o projeto" data-en="About the project" data-es="Sobre el proyecto">
+            Sobre o projeto
+        </a>
+
+    </nav>
+
+    <select id="idioma" aria-label="Selecionar idioma">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+
+</header>
+
+<main id="conteudo" class="pagina-servicos">
+
+    <section class="controles-servicos">
+
+        <h2
+            data-pt="Acessibilidade"
+            data-en="Accessibility"
+            data-es="Accesibilidad">
+            Acessibilidade
+        </h2>
+
+        <div class="controles">
+
+            <button id="aumentarTexto" type="button"
+                data-pt="A+ Aumentar texto"
+                data-en="A+ Increase text"
+                data-es="A+ Aumentar texto">
+                A+ Aumentar texto
+            </button>
+
+            <button id="diminuirTexto" type="button"
+                data-pt="A- Diminuir texto"
+                data-en="A- Decrease text"
+                data-es="A- Reducir texto">
+                A- Diminuir texto
+            </button>
+
+            <button id="contraste" type="button" aria-pressed="false"
+                data-pt="Alto contraste"
+                data-en="High contrast"
+                data-es="Alto contraste">
+                Alto contraste
+            </button>
+
+            <button id="leituraSimples" type="button" aria-pressed="false"
+                data-pt="Leitura simplificada"
+                data-en="Simplified reading"
+                data-es="Lectura simplificada">
+                Leitura simplificada
+            </button>
+
+        </div>
+
+    </section>
+
+    <h1
+        data-pt="Serviços Públicos"
+        data-en="Public Services"
+        data-es="Servicios Públicos">
+        Serviços Públicos
+    </h1>
+
+    <p class="introducao-servicos"
+        data-pt="Encontre informações sobre serviços essenciais e direitos sociais na sua cidade."
+        data-en="Find information about essential services and social rights in your city."
+        data-es="Encuentre información sobre servicios esenciales y derechos sociales en su ciudad.">
+        Encontre informações sobre serviços essenciais e direitos sociais na sua cidade.
+    </p>
+
+    <section class="busca-localizacao" aria-labelledby="tituloBusca">
+
+        <div class="icone-localizacao" aria-hidden="true">📍</div>
+
+        <h2 id="tituloBusca"
+            data-pt="Encontre serviços na sua cidade"
+            data-en="Find services in your city"
+            data-es="Encuentre servicios en su ciudad">
+            Encontre serviços na sua cidade
+        </h2>
+
+        <p
+            data-pt="Selecione seu estado e município para consultar os serviços públicos da sua região."
+            data-en="Select your state and municipality to search for public services in your area."
+            data-es="Seleccione su estado y municipio para consultar los servicios públicos de su región.">
+            Selecione seu estado e município para consultar os serviços públicos da sua região.
+        </p>
+
+        <div class="campo-localizacao">
+
+            <label for="estado"
+                data-pt="Estado"
+                data-en="State"
+                data-es="Estado">
+                Estado
+            </label>
+
+            <select id="estado" name="estado">
+                <option value=""
+                    data-pt="Carregando estados..."
+                    data-en="Loading states..."
+                    data-es="Cargando estados...">
+                    Carregando estados...
+                </option>
+            </select>
+
+        </div>
+
+        <div class="campo-localizacao">
+
+            <label for="cidade"
+                data-pt="Cidade"
+                data-en="City"
+                data-es="Ciudad">
+                Cidade
+            </label>
+
+            <select id="cidade" name="cidade" disabled>
+                <option value=""
+                    data-pt="Selecione primeiro um estado"
+                    data-en="Select a state first"
+                    data-es="Seleccione primero un estado">
+                    Selecione primeiro um estado
+                </option>
+            </select>
+
+        </div>
+
+        <button
+            id="buscarServicos"
+            class="botao botao-busca"
+            type="button"
+            disabled
+            data-pt="Buscar serviços"
+            data-en="Search services"
+            data-es="Buscar servicios">
+            Buscar serviços
+        </button>
+
+        <p id="mensagemBusca" class="mensagem-busca"
+           role="status" aria-live="polite"></p>
+
+    </section>
+
+    <section id="resultadosServicos"
+        class="resultados-servicos"
+        aria-labelledby="tituloResultados"
+        hidden>
+
+        <h2 id="tituloResultados"
+            data-pt="Serviços para sua região"
+            data-en="Services in your area"
+            data-es="Servicios para su región">
+            Serviços para sua região
+        </h2>
+
+        <p id="localSelecionado" class="local-selecionado"></p>
+
+        <p class="orientacao-resultados"
+            data-pt="Escolha uma categoria para consultar os locais encontrados na sua cidade."
+            data-en="Choose a category to search for locations in your city."
+            data-es="Elija una categoría para consultar los lugares de su ciudad.">
+            Escolha uma categoria para consultar os locais encontrados na sua cidade.
+        </p>
+
+        <div id="gradeResultados" class="grade-servicos"></div>
+
+        <p class="aviso-resultados"
+            data-pt="A consulta abre uma pesquisa externa. Confirme os dados, horários e formas de atendimento diretamente com o estabelecimento ou órgão responsável."
+            data-en="The search opens an external page. Confirm details, opening hours and services directly with the institution."
+            data-es="La consulta abre una búsqueda externa. Confirme los datos, horarios y servicios directamente con la institución.">
+            A consulta abre uma pesquisa externa. Confirme os dados, horários e formas de atendimento diretamente com o estabelecimento ou órgão responsável.
+        </p>
+
+    </section>
+
+    <a href="index.html"
+        class="botao botao-voltar"
+        data-pt="Voltar ao início"
+        data-en="Back to home"
+        data-es="Volver al inicio">
+        Voltar ao início
+    </a>
+
+</main>
+
+<footer>
+    <p>Grupo 3 – Serviços Públicos</p>
+    <p>Maria Vitória, Riciane e Kamille</p>
+    <p>Curso Técnico em Desenvolvimento de Sistemas</p>
+    <p>CEEP – 2026</p>
+</footer>
+
+<button
+    id="botaoAudio"
+    class="botao-audio"
+    type="button"
+    aria-label="Abrir leitura em voz alta"
+    aria-expanded="false">
+    🔊
+</button>
+
+<div id="painelAudio" class="painel-audio" role="region"
+     aria-label="Controles de leitura em voz alta" hidden>
+
+    <h3
+        data-pt="Leitura em voz alta"
+        data-en="Read aloud"
+        data-es="Lectura en voz alta">
+        Leitura em voz alta
+    </h3>
+
+    <button id="reproduzir" type="button"
+        data-pt="Reproduzir" data-en="Play" data-es="Reproducir">
+        Reproduzir
+    </button>
+
+    <button id="pausar" type="button"
+        data-pt="Pausar" data-en="Pause" data-es="Pausar">
+        Pausar
+    </button>
+
+    <button id="encerrar" type="button"
+        data-pt="Encerrar" data-en="Stop" data-es="Detener">
+        Encerrar
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

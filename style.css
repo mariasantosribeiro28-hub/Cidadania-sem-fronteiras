@@ -1,0 +1,697 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+:root {
+    --font-scale: 1;
+    --azul: #174b70;
+    --azul-claro: #eaf3f8;
+    --verde: #31846c;
+    --fundo: #f7fafc;
+    --texto: #263746;
+    --branco: #ffffff;
+}
+
+html {
+    font-size: calc(16px * var(--font-scale));
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+button,
+a,
+select {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 3px solid #e6a23c;
+    outline-offset: 3px;
+}
+
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    z-index: 100;
+    background: var(--azul);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.pular-conteudo:focus {
+    top: 10px;
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.cabecalho {
+    background: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 5%;
+    box-shadow: 0 2px 10px #00000012;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: var(--verde);
+}
+
+#idioma {
+    padding: 9px;
+    border: 1px solid #ccd7df;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+}
+
+
+/* =====================================
+   BANNER
+===================================== */
+
+.banner {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--azul-claro);
+}
+
+.banner-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* =====================================
+   PÁGINA INICIAL
+===================================== */
+
+.inicio,
+.acessibilidade,
+.sobre {
+    text-align: center;
+    padding: 65px 8%;
+}
+
+.inicio h1,
+.pagina-servicos h1 {
+    color: var(--azul);
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.inicio p,
+.sobre p,
+.acessibilidade p {
+    max-width: 850px;
+    margin: 0 auto 25px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--verde);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.botao:hover {
+    background: #246b57;
+}
+
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+.acessibilidade {
+    background: var(--azul-claro);
+}
+
+.acessibilidade h2,
+.sobre h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.controles button {
+    padding: 11px 18px;
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+    background: white;
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.controles button:hover {
+    background: var(--azul);
+    color: white;
+}
+
+.dica-acessibilidade {
+    margin-top: 25px !important;
+    font-size: 0.9rem;
+}
+
+.controles-servicos {
+    background: var(--azul-claro);
+    border-radius: 14px;
+    padding: 25px;
+    margin: 0 auto 40px;
+}
+
+.controles-servicos h2 {
+    color: var(--azul);
+    margin-bottom: 18px;
+}
+
+
+/* =====================================
+   PÁGINA DE SERVIÇOS
+===================================== */
+
+.pagina-servicos {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+.pagina-servicos h1 {
+    color: var(--azul);
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.introducao-servicos {
+    max-width: 750px;
+    margin: 0 auto 35px;
+}
+
+
+/* =====================================
+   BUSCA DE LOCALIZAÇÃO
+===================================== */
+
+.busca-localizacao {
+    max-width: 680px;
+    margin: 35px auto 50px;
+    padding: 35px;
+    background: var(--branco);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px #0000000d;
+    text-align: left;
+}
+
+.icone-localizacao {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.busca-localizacao h2 {
+    color: var(--azul);
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.busca-localizacao > p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--texto);
+}
+
+.campo-localizacao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.campo-localizacao label {
+    color: var(--azul);
+    font-weight: bold;
+}
+
+.campo-localizacao select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd7df;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    cursor: pointer;
+}
+
+.campo-localizacao select:disabled {
+    background: #edf0f2;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.campo-localizacao select:focus {
+    outline: 3px solid #a8d7c5;
+    border-color: var(--verde);
+}
+
+.botao-busca {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.botao-busca:disabled {
+    background: #a6b8b1;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.mensagem-busca {
+    min-height: 25px;
+    margin-top: 15px;
+    text-align: center;
+    color: var(--azul);
+    font-size: 0.95rem;
+}
+
+
+/* =====================================
+   RESULTADOS DOS SERVIÇOS
+===================================== */
+
+.resultados-servicos {
+    margin: 45px auto;
+    scroll-margin-top: 30px;
+}
+
+.resultados-servicos[hidden] {
+    display: none;
+}
+
+.resultados-servicos > h2 {
+    color: var(--azul);
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.local-selecionado {
+    font-weight: bold;
+    color: var(--verde);
+    margin-bottom: 12px;
+}
+
+.orientacao-resultados {
+    margin-bottom: 28px;
+}
+
+.grade-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.card-servico {
+    background: white;
+    border-radius: 14px;
+    padding: 28px 22px;
+    box-shadow: 0 3px 14px #0000000d;
+    text-align: center;
+}
+
+.card-servico .icone-servico {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.card-servico h2,
+.card-servico h3 {
+    color: var(--azul);
+    margin: 12px 0;
+    font-size: 1.3rem;
+}
+
+.card-servico p {
+    margin-bottom: 20px;
+}
+
+.botao-consultar {
+    margin-top: 5px;
+}
+
+.aviso-resultados {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 15px;
+    background: var(--azul-claro);
+    border-left: 4px solid var(--verde);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.botao-voltar {
+    margin-top: 15px;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+
+/* =====================================
+   LEITURA EM VOZ ALTA
+===================================== */
+
+.botao-audio {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    background: var(--verde);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 3px 12px #00000030;
+    z-index: 10;
+}
+
+.painel-audio {
+    position: fixed;
+    right: 22px;
+    bottom: 90px;
+    z-index: 10;
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #00000025;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.painel-audio[hidden] {
+    display: none;
+}
+
+.painel-audio h3 {
+    color: var(--azul);
+    font-size: 1rem;
+}
+
+.painel-audio button {
+    padding: 9px;
+    border: none;
+    border-radius: 7px;
+    background: var(--azul-claro);
+    color: var(--azul);
+    cursor: pointer;
+}
+
+.painel-audio button:hover {
+    background: var(--azul);
+    color: white;
+}
+
+
+/* =====================================
+   ALTO CONTRASTE
+===================================== */
+
+body.alto-contraste {
+    background: #000;
+    color: #fff;
+}
+
+body.alto-contraste .cabecalho,
+body.alto-contraste .card-servico,
+body.alto-contraste .painel-audio,
+body.alto-contraste .controles button,
+body.alto-contraste .busca-localizacao,
+body.alto-contraste .controles-servicos {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste .menu a,
+body.alto-contraste .logo,
+body.alto-contraste .card-servico h2,
+body.alto-contraste .card-servico h3,
+body.alto-contraste .busca-localizacao label,
+body.alto-contraste .controles-servicos h2 {
+    color: #ffeb3b;
+}
+
+body.alto-contraste .acessibilidade {
+    background: #111;
+}
+
+body.alto-contraste .botao,
+body.alto-contraste .botao-audio {
+    background: #ffeb3b;
+    color: #000;
+}
+
+body.alto-contraste footer {
+    background: #000;
+    border-top: 2px solid white;
+}
+
+body.alto-contraste .campo-localizacao select,
+body.alto-contraste #idioma {
+    background: #111;
+    color: white;
+    border: 1px solid white;
+}
+
+body.alto-contraste .campo-localizacao select:disabled {
+    background: #333;
+    color: #ccc;
+}
+
+body.alto-contraste .aviso-resultados {
+    background: #111;
+    border-color: #ffeb3b;
+    color: white;
+}
+
+body.alto-contraste .mensagem-busca,
+body.alto-contraste .local-selecionado {
+    color: #ffeb3b;
+}
+
+body.alto-contraste .painel-audio button {
+    background: #222;
+    color: #ffeb3b;
+    border: 1px solid white;
+}
+
+body.alto-contraste .controles button {
+    color: #ffeb3b;
+    border-color: #ffeb3b;
+}
+
+
+/* =====================================
+   LEITURA SIMPLIFICADA
+===================================== */
+
+body.leitura-simples {
+    background: #fff;
+    color: #111;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+}
+
+body.leitura-simples .cabecalho,
+body.leitura-simples .inicio,
+body.leitura-simples .acessibilidade,
+body.leitura-simples .sobre,
+body.leitura-simples .busca-localizacao,
+body.leitura-simples .card-servico,
+body.leitura-simples .controles-servicos {
+    box-shadow: none;
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+
+body.leitura-simples .banner {
+    height: auto;
+    max-height: 250px;
+}
+
+body.leitura-simples .banner-imagem {
+    object-fit: contain;
+}
+
+body.leitura-simples p {
+    max-width: 70ch;
+    line-height: 1.9;
+}
+
+body.leitura-simples .botao,
+body.leitura-simples button {
+    border-radius: 4px;
+}
+
+body.leitura-simples footer {
+    background: #222;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .cabecalho {
+        justify-content: center;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .grade-servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .banner {
+        height: 220px;
+    }
+
+    .grade-servicos {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio,
+    .acessibilidade,
+    .sobre {
+        padding: 40px 6%;
+    }
+
+    .inicio h1,
+    .pagina-servicos h1 {
+        font-size: 1.7rem;
+    }
+
+    .busca-localizacao {
+        padding: 22px 18px;
+        margin: 25px auto 35px;
+    }
+
+    .resultados-servicos > h2 {
+        font-size: 1.5rem;
+    }
+
+    .botao-audio {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .painel-audio {
+        right: 15px;
+        bottom: 78px;
+    }
+
+    .controles-servicos {
+        padding: 18px 12px;
+    }
+
+}
